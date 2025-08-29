@@ -1,5 +1,67 @@
-# Object file
-*.o
+# -------------------------------
+# Archivos del sistema operativo
+# -------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
 
-# Ada Library Information
-*.ali
+# -------------------------------
+# Archivos compilados / binarios
+# -------------------------------
+# Java
+*.class
+*.jar
+*.war
+*.ear
+
+# C/C++
+*.exe
+*.out
+*.o
+*.obj
+
+# C#
+*.dll
+*.pdb
+*.exe
+*.obj
+*.user
+*.suo
+
+# Python
+*.pyc
+__pycache__/
+
+# Node / JavaScript
+node_modules/
+dist/
+build/
+*.log
+
+# -------------------------------
+# IDE / Editor
+# -------------------------------
+# VSCode
+.vscode/
+
+# Eclipse
+.project
+.settings/
+.classpath
+
+# Visual Studio
+*.user
+*.suo
+*.vcxproj.user
+*.ncb
+*.opensdf
+*.sdf
+*.ipch
+*.aps
+*.ilk
+*.pdb
+
+# Otros
+*.swp
+*.tmp
+*.bak
