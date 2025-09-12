@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>TicTacToe</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+    <div class="container text-center mt-5">
+        <h1 class="mb-4">Gatito</h1>
+        <div class="row justify-content-center mb-4">
+            <div class="col-md-8">
+                <div class="input-group">
+                    <label class="input-group-text" for="modo-juego">Modo de Juego</label>
+                    <select id="modo-juego" class="form-select">
+                        <option value="computadora">Jugador vs Computadora</option>
+                        <option value="humano">Jugador vs Jugador</option>
+                    </select>
+                    <button onclick="iniciar()" type="button" class="btn btn-primary">Iniciar Juego</button>
+                    <button onclick="iniciar()" type="button" class="btn btn-secondary ms-2">Reiniciar</button>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-4">
+                <table class="table table-bordered border-dark">
+                    <tbody>
+                        <tr>
+                            <td><button onclick="turno(0,0)" type="button" id="button[0][0]" class="casilla btn btn-outline-dark"></button></td>
+                            <td><button onclick="turno(0,1)" type="button" id="button[0][1]" class="casilla btn btn-outline-dark"></button></td>
+                            <td><button onclick="turno(0,2)" type="button" id="button[0][2]" class="casilla btn btn-outline-dark"></button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="turno(1,0)" type="button" id="button[1][0]" class="casilla btn btn-outline-dark"></button></td>
+                            <td><button onclick="turno(1,1)" type="button" id="button[1][1]" class="casilla btn btn-outline-dark"></button></td>
+                            <td><button onclick="turno(1,2)" type="button" id="button[1][2]" class="casilla btn btn-outline-dark"></button></td>
+                        </tr>
+                        <tr>
+                            <td><button onclick="turno(2,0)" type="button" id="button[2][0]" class="casilla btn btn-outline-dark"></button></td>
+                            <td><button onclick="turno(2,1)" type="button" id="button[2][1]" class="casilla btn btn-outline-dark"></button></td>
+                            <td><button onclick="turno(2,2)" type="button" id="button[2][2]" class="casilla btn btn-outline-dark"></button></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

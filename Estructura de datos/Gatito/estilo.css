@@ -1,0 +1,7 @@
+/* Estilo para los botones de las casillas del tablero */
+.casilla {
+    width: 6rem; /* Ancho del botón */
+    height: 6rem; /* Altura del botón */
+    font-size: 3rem; /* Tamaño de la fuente para X y O */
+    font-weight: bold; /* Grosor de la fuente */
+}
