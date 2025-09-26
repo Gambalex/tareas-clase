@@ -1,37 +1,37 @@
 using System;
 
-class Board
+class Tablero
 {
-    private const int BoardSize = 10;
-    private const char Water = '~';
-    private const char Ship = 'S';
-    private const char Hit = 'X';
-    private const char Miss = 'O';
+    private const int tamañoTablero = 10;
+    private const char aguaTablero = '~';
+    private const char misBarcos = 'S';
+    private const char aciertoTablero = 'X';
+    private const char errorTablero = 'O';
 
-    private char[,] grid = new char[BoardSize, BoardSize];
+    private char[,] grid = new char[tamañoTablero, tamañoTablero];
 
-    public Board()
+    public Tablero()
     {
-        for (int i = 0; i < BoardSize; i++)
-            for (int j = 0; j < BoardSize; j++)
-                grid[i, j] = Water;
+        for (int i = 0; i < tamañoTablero; i++)
+            for (int j = 0; j < tamañoTablero; j++)
+                grid[i, j] = aguaTablero;
     }
 
-    public void Print(bool showShips = false)
+    public void Print(bool verMisBarcos = false)
     {
         Console.Write("   ");
-        for (int i = 1; i <= BoardSize; i++)
+        for (int i = 1; i <= tamañoTablero; i++)
             Console.Write(i.ToString().PadLeft(2) + " ");
         Console.WriteLine();
 
-        for (int i = 0; i < BoardSize; i++)
+        for (int i = 0; i < tamañoTablero; i++)
         {
             Console.Write((i + 1).ToString().PadLeft(2) + " ");
-            for (int j = 0; j < BoardSize; j++)
+            for (int j = 0; j < tamañoTablero; j++)
             {
                 char cell = grid[i, j];
-                if (!showShips && cell == Ship)
-                    Console.Write(Water + "  ");
+                if (!verMisBarcos && cell == misBarcos)
+                    Console.Write(aguaTablero + "  ");
                 else
                     Console.Write(cell + "  ");
             }
@@ -39,39 +39,39 @@ class Board
         }
     }
 
-    public bool PlaceShip(int size, int x, int y, bool horizontal)
+    public bool PlacemisBarcos(int size, int x, int y, bool horizontal)
     {
         if (horizontal)
         {
-            if (y + size > BoardSize) return false;
+            if (y + size > tamañoTablero) return false;
             for (int i = 0; i < size; i++)
-                if (grid[x, y + i] == Ship) return false;
+                if (grid[x, y + i] == misBarcos) return false;
 
             for (int i = 0; i < size; i++)
-                grid[x, y + i] = Ship;
+                grid[x, y + i] = misBarcos;
         }
         else
         {
-            if (x + size > BoardSize) return false;
+            if (x + size > tamañoTablero) return false;
             for (int i = 0; i < size; i++)
-                if (grid[x + i, y] == Ship) return false;
+                if (grid[x + i, y] == misBarcos) return false;
 
             for (int i = 0; i < size; i++)
-                grid[x + i, y] = Ship;
+                grid[x + i, y] = misBarcos;
         }
         return true;
     }
 
     public bool Shoot(int x, int y)
     {
-        if (grid[x, y] == Ship)
+        if (grid[x, y] == misBarcos)
         {
-            grid[x, y] = Hit;
+            grid[x, y] = aciertoTablero;
             return true;
         }
-        else if (grid[x, y] == Water)
+        else if (grid[x, y] == aguaTablero)
         {
-            grid[x, y] = Miss;
+            grid[x, y] = errorTablero;
             return false;
         }
         else
@@ -81,22 +81,22 @@ class Board
         }
     }
 
-    public bool AllShipsSunk()
+    public bool AllmisBarcossSunk()
     {
         foreach (char cell in grid)
-            if (cell == Ship) return false;
+            if (cell == misBarcos) return false;
         return true;
     }
 }
 
 class Program
 {
-    static void PlaceShips(Board board, string playerName)
+    static void PlacemisBarcoss(Tablero Tablero, string playerName)
     {
-        int[] shipSizes = { 5, 4, 3, 2, 2 };
+        int[] misBarcosSizes = { 5, 4, 3, 3, 2 };
 
         Console.WriteLine($"\n{playerName}, coloca tus barcos.");
-        foreach (int size in shipSizes)
+        foreach (int size in misBarcosSizes)
         {
             bool placed = false;
             while (!placed)
@@ -115,9 +115,9 @@ class Program
                         continue;
                     }
 
-                    if (board.PlaceShip(size, x, y, horizontal))
+                    if (Tablero.PlacemisBarcos(size, x, y, horizontal))
                     {
-                        board.Print(true);
+                        Tablero.Print(true);
                         placed = true;
                     }
                     else
@@ -139,27 +139,27 @@ class Program
         Console.WriteLine("=== BATALLA NAVAL 2 JUGADORES ===");
 
         Console.Write("Nombre del Jugador 1: ");
-        string player1 = Console.ReadLine();
+        string jugadorNumeroUno = Console.ReadLine();
 
         Console.Write("Nombre del Jugador 2: ");
-        string player2 = Console.ReadLine();
+        string jugadorNumeroDos = Console.ReadLine();
 
-        Board board1 = new Board();
-        Board board2 = new Board();
+        Tablero Tablero1 = new Tablero();
+        Tablero Tablero2 = new Tablero();
 
         // Colocar barcos
-        PlaceShips(board1, player1);
-        PlaceShips(board2, player2);
+        PlacemisBarcoss(Tablero1, jugadorNumeroUno);
+        PlacemisBarcoss(Tablero2, jugadorNumeroDos);
 
-        bool player1Turn = true;
+        bool turnoJugadorUno = true;
         while (true)
         {
-            string currentPlayer = player1Turn ? player1 : player2;
-            Board opponentBoard = player1Turn ? board2 : board1;
+            string currentPlayer = turnoJugadorUno ? jugadorNumeroUno : jugadorNumeroDos;
+            Tablero opponentTablero = turnoJugadorUno ? Tablero2 : Tablero1;
 
             Console.Clear();
             Console.WriteLine($"Turno de {currentPlayer}:");
-            opponentBoard.Print(false);
+            opponentTablero.Print(false);
 
             Console.WriteLine("Ingresa coordenadas para disparar (fila columna):");
             try
@@ -175,19 +175,19 @@ class Program
                     continue;
                 }
 
-                bool hit = opponentBoard.Shoot(x, y);
-                Console.WriteLine(hit ? "¡Tocado!" : "¡Agua!");
+                bool aciertoTablero = opponentTablero.Shoot(x, y);
+                Console.WriteLine(aciertoTablero ? "¡Tocado!" : "¡Agua!");
                 Console.WriteLine("Presiona Enter para continuar.");
                 Console.ReadLine();
 
-                if (opponentBoard.AllShipsSunk())
+                if (opponentTablero.AllmisBarcossSunk())
                 {
                     Console.Clear();
                     Console.WriteLine($"¡{currentPlayer} ha ganado la batalla naval!");
                     break;
                 }
 
-                player1Turn = !player1Turn;
+                turnoJugadorUno = !turnoJugadorUno;
             }
             catch
             {
