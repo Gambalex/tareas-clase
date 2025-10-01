@@ -13,7 +13,7 @@ void parImpar() {
 
     color(11);
     cout << "+--------------------------------+\n";
-    cout << "¦           1- PAR O IMPAR      ¦\n";
+    cout << "Â¦           1- PAR O IMPAR      Â¦\n";
     cout << "+--------------------------------+\n";
 
     color(15);
@@ -37,7 +37,7 @@ void diaSemana() {
 
     color(11);
     cout << "+--------------------------------+\n";
-    cout << "¦       2- DIA DE LA SEMANA     ¦\n";
+    cout << "Â¦       2- DIA DE LA SEMANA     Â¦\n";
     cout << "+--------------------------------+\n";
 
     color(15);
@@ -66,7 +66,7 @@ void mesAno() {
 
     color(11);
     cout << "+--------------------------------+\n";
-    cout << "¦          3- MES DEL AÑO       ¦\n";
+    cout << "Â¦          3- MES DEL AÃ‘O       Â¦\n";
     cout << "+--------------------------------+\n";
 
     color(15);
@@ -100,7 +100,7 @@ void positivoNegativo() {
 
     color(11);
     cout << "+--------------------------------+\n";
-    cout << "¦       4- POSITIVO O NEGATIVO  ¦\n";
+    cout << "Â¦       4- POSITIVO O NEGATIVO  Â¦\n";
     cout << "+--------------------------------+\n";
 
     color(15);
@@ -125,7 +125,7 @@ void mayorQueCien() {
 
     color(11);
     cout << "+--------------------------------+\n";
-    cout << "¦           5- MAYOR QUE 100    ¦\n";
+    cout << "Â¦           5- MAYOR QUE 100    Â¦\n";
     cout << "+--------------------------------+\n";
 
     color(15);
@@ -150,7 +150,7 @@ void letraVocal() {
 
     color(11);
     cout << "+--------------------------------+\n";
-    cout << "¦   6- LETRA VOCAL O CONSONANTE ¦\n";
+    cout << "Â¦   6- LETRA VOCAL O CONSONANTE Â¦\n";
     cout << "+--------------------------------+\n";
 
     color(15);
@@ -177,7 +177,7 @@ void numeroIgualSuma() {
 
     color(11);
     cout << "+-------------------------------------------------+\n";
-    cout << "¦ 7- UN NUMERO ES IGUAL A LA SUMA DE 2 NUMEROS  ¦\n";
+    cout << "Â¦ 7- UN NUMERO ES IGUAL A LA SUMA DE 2 NUMEROS  Â¦\n";
     cout << "+-------------------------------------------------+\n";
 
     color(15);
@@ -205,7 +205,7 @@ void numeroIgualMultiplicacion() {
 
     color(11);
     cout << "+----------------------------------------------------+\n";
-    cout << "¦ 8- UN NUMERO ES IGUAL A LA MULTIPLICACION DE 2 NUMEROS ¦\n";
+    cout << "Â¦ 8- UN NUMERO ES IGUAL A LA MULTIPLICACION DE 2 NUMEROS Â¦\n";
     cout << "+----------------------------------------------------+\n";
 
     color(15);
@@ -233,15 +233,15 @@ void mostrarMenu() {
 	
     color(11);
     cout << "+-------------------------------+\n";
-    cout << "¦         MENU PRINCIPAL        ¦\n";
+    cout << "Â¦         MENU PRINCIPAL        Â¦\n";
     cout << "+-------------------------------+\n";
-    cout << "¦ 1 - PAR O IMPAR               ¦\n";
-    cout << "¦ 2 - DIA DE LA SEMANA          ¦\n";
-    cout << "¦ 3 - MES DEL ANO               ¦\n";
-    cout << "¦ 4 - POSITIVO O NEGATIVO       ¦\n";
-    cout << "¦ 5 - MAYOR QUE 100             ¦\n";
-    cout << "¦ 6 - LETRA VOCAL O CONSONANTE  ¦\n";
-    cout << "¦ 7 - SALIR                     ¦\n";
+    cout << "Â¦ 1 - PAR O IMPAR               Â¦\n";
+    cout << "Â¦ 2 - DIA DE LA SEMANA          Â¦\n";
+    cout << "Â¦ 3 - MES DEL ANO               Â¦\n";
+    cout << "Â¦ 4 - POSITIVO O NEGATIVO       Â¦\n";
+    cout << "Â¦ 5 - MAYOR QUE 100             Â¦\n";
+    cout << "Â¦ 6 - LETRA VOCAL O CONSONANTE  Â¦\n";
+    cout << "Â¦ 7 - SALIR                     Â¦\n";
     cout << "+-------------------------------+\n";
 }
 
@@ -268,12 +268,12 @@ int main() {
             case 6: letraVocal(); break;
             case 7:
                 color(12); // Rojo
-                cout << "¡Adiós!\n";
+                cout << "Â¡AdiÃ³s!\n";
                 repetir = 'N';
                 continue;
             default:
                 color(12);
-                cout << "Opción invalida\n";
+                cout << "OpciÃ³n invalida\n";
                 color(15);
                 break;
         }
@@ -282,7 +282,7 @@ int main() {
             char letra;
             while (true) {
                 color(14);
-                cout << "\n¿Desea realizar otra operacion? (S/N): ";
+                cout << "\nÂ¿Desea realizar otra operacion? (S/N): ";
                 cin >> letra;
                 letra = toupper(letra);
 
