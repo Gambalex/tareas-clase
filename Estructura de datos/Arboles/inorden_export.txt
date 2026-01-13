@@ -1,0 +1,6 @@
+Recorrido Inorden del Árbol Binario de Búsqueda
+==============================================
+Número de elementos: 6
+Altura del árbol: 6
+----------------------------------------------
+5, 9, 10, 11, 15, 16
